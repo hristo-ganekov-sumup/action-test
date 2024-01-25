@@ -5,11 +5,11 @@ branding:
   icon: 'log-in'
   color: 'green'
 inputs:
-  test:
+  test_env_variable:
     description: 'this is a test input'
     required: true
 runs:
   using: 'docker'
-  image: 'image: docker://861104244336.dkr.ecr.eu-west-1.amazonaws.com/platform_governance/action-test:latest'
-  args:
-    - ${{ inputs.test }}
+  image: 'docker://peachlover/action-test:latest'
+  env:
+   test_env_variable: ${{ inputs.test_env_variable }}
